@@ -2,13 +2,14 @@ import { fileURLToPath, URL } from 'node:url'
 
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import vuetify from 'vite-plugin-vuetify'
 
 // Assurez-vous de remplacer `<NOM_DU_REPO>` par le nom de votre dépôt GitHub
 const repoName = process.env.NODE_ENV === 'production' ? '/annuaire-sites-publics-senegal-ui/' : '/'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [vue(), vuetify()],
   base: repoName,
   resolve: {
     alias: {
