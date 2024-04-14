@@ -65,7 +65,10 @@ export default {
 
     // Load CSV data
     onMounted(() => {
-      fetch('/annuaire.csv')
+      // fetch('/annuaire.csv')
+      fetch(
+        'https://raw.githubusercontent.com/senegalouvert/annuaire-sites-publics-senegal/master/data/annuaire.csv'
+      )
         .then((response) => response.text())
         .then((csv) => {
           Papa.parse(csv, {
@@ -82,3 +85,9 @@ export default {
   }
 }
 </script>
+
+<style>
+a {
+  color: #00853f;
+}
+</style>
